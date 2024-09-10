@@ -11,7 +11,7 @@ public class DataIO : MonoBehaviour
 {
     private UdpClient udpClient;
     private UdpClient sendUdpClient;
-    public string esp32IP = "192.168.0.25"; // Replace with your ESP32 IP address
+    public string esp32IP = "192.168.0.27"; // Replace with your ESP32 IP address
     public int receivePort = 4210; // Port number for receiving data
     public int sendPort = 4211; // Port number for sending data
     public GameObject targetObject; // The game object to track

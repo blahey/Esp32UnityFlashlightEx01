@@ -9,6 +9,9 @@ public class FlashlightController : MonoBehaviour
     public AudioClip turnOnSound;
     public AudioClip turnOffSound;
 
+    public int potVal;
+    
+
     // Private variables
     private Light flashlight;
     private AudioSource audioSource;
@@ -39,15 +42,23 @@ public class FlashlightController : MonoBehaviour
 
     private void Update()
     {
+        potVal = GameObject.Find("DataIO").GetComponent<DataIO>().potentiometerValue;
+        flashlight.intensity = potVal * .01f;
+
         //float distanceBetweenObjects = GameObject.Find("Sphere").GetComponent<DistanceFromObject01>().dist;
         int switchVal26 = GameObject.Find("DataIO").GetComponent<DataIO>().flashlightButtonState;
         if(switchVal26 == 0 && hasSwitched == false)
         //if (Input.GetKeyDown(KeyCode.F))
+
+        
+
         {
             hasSwitched = true;
             if (flashlight != null)
             {
                 flashlight.enabled = !flashlight.enabled;
+
+                
 
                 // Play audio effect based on flashlight state
                 if (flashlight.enabled)

@@ -1,12 +1,18 @@
 #include <WiFi.h>
 #include <WiFiUdp.h>
 
-char ssid[] = "entanglement";    // Set your Wi-Fi SSID
-char password[] = "BU@37ajMVAg2";    // Set your Wi-Fi password
+char ssid[] = "meshmeshmesh";    // Set your Wi-Fi SSID
+char password[] = "sparkyasu";    // Set your Wi-Fi password
 int status = WL_IDLE_STATUS;        // Indicator of Wi-Fi status
 
 WiFiUDP udp;
-const char* udpAddress = "192.168.0.8";  // IP address of the computer running Unity (adjust if necessary)
+
+// Command Prompts to determine current IP address for your computer:
+// Windows: Type cmd in the search box, press Enter, and then type "ipconfig /all" and press Enter. Your IP address will be the IPv4 address.
+// Mac: Open Terminal. Type "ipconfig getifaddr en0" and press enter.
+
+
+const char* udpAddress = "192.168.1.76";  // IP address of the computer running Unity (adjust if necessary)
 const int udpPort = 4211;
 
 const int buttonPin = 21;
